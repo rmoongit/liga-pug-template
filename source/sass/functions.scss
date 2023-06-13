@@ -9,7 +9,7 @@
 // }
 
 // @function size-desktop($size-in-px) {
-//   @return calc($size-in-px / $vp-1920 * 100vw);
+//   @return calc($size-in-px / $vp-1512 * 100vw);
 // }
 
 // reboot.scss
@@ -25,13 +25,13 @@
 // 2) ремы в плюс от эталона и в минус, на планшете обычная верстка
 
 // functions.scss
-// @function size($size-in-px) {
-//   @return calc($size-in-px / $fz-default * 1rem;
-// }
+@function size($size-in-px) {
+  @return calc($size-in-px / $fz-default * 1rem);
+}
 
-// @function size-desktop($size-in-px) {
-//   @return calc($size-in-px / $vp-1920 * 100vw;
-// }
+@function size-desktop($size-in-px) {
+  @return calc($size-in-px / $vp-1512 * 100vw);
+}
 
 // reboot.scss
 // html {
@@ -73,13 +73,13 @@
 // ---------------------------------
 // 4) ремы в коэффициентах
 // functions.scss
-// @function size($size-in-px) {
-//   @return calc($size-in-px / $fz-default * 1rem);
-// }
+@function size($size-in-px) {
+  @return calc($size-in-px / $fz-default * 1rem);
+}
 
-// @function size-coefficient($size-in-px) {
-//   @return calc($size-in-px * 0.9);
-// }
+@function size-coefficient($size-in-px) {
+  @return calc($size-in-px * 0.8);
+}
 
 // @function size-coefficient-large($size-in-px) {
 //   @return calc($size-in-px * 1.3);

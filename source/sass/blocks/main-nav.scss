@@ -1,19 +1,44 @@
 .main-nav {
+  margin: 0 auto;
+  width: 100%;
+
   &__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 33.3%);
     margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
+    margin-right: size(20px);
+    gap: size(20px) 0;
+    margin-left: size(243px);
     padding: 0;
 
     list-style: none;
+
+    @include vp-767 {
+      margin: 0;
+      padding: 0 size(87px);
+      margin-top: size(103px);
+      grid-template-columns: 100%;
+      gap: size(40px);
+      justify-content: center;
+    }
   }
 
   &__item {
-    margin-right: 20px;
+    font-size: size(14px);
+    line-height: size(19px);
+    margin-right: size(20px);
+    border: size(2px) solid $color-default-white;
+    border-radius: size(5px);
+    text-align: center;
+
+    @include vp-767 {
+      margin-right: 0;
+    }
   }
 
   &__link {
+    display: block;
+    padding: size(10px) size(18px);
     color: $color-default-white;
 
     &.is-active {
@@ -23,5 +48,23 @@
 
   &__toggle {
     display: none;
+  }
+}
+
+.main-nav__wrapper {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.main-nav__toggle {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include vp-767 {
+    margin-left: auto;
+    display: block;
   }
 }

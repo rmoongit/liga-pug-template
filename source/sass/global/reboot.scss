@@ -13,10 +13,10 @@ body {
 
 html {
   font-style: normal;
-  font-weight: 400;
-  font-size: $fz-default;
-  line-height: 24px;
-  font-family: $ff-placeholder;
+  font-weight: 500;
+  font-size: size-desktop($fz-default);
+  line-height: size(24px);
+  font-family: $ff-nunito;
   color: $color-default-black;
 
   -webkit-font-smoothing: antialiased;
@@ -25,6 +25,14 @@ html {
   text-rendering: optimizeLegibility;
   // если по прежнему есть проблемы с выравниванием
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
+
+  @include vp-1023 {
+    font-size: size-foefficient($fz-default);
+  }
+
+  @include vp-767 {
+    font-size: $fz-default;
+  }
 }
 
 body {
@@ -111,13 +119,15 @@ input[type="number"] {
 // ios button \ inputs reset
 select,
 textarea,
-input:matches([type="email"],
-  [type="number"],
-  [type="password"],
-  [type="search"],
-  [type="tel"],
-  [type="text"],
-  [type="url"]) {
+input:matches(
+    [type="email"],
+    [type="number"],
+    [type="password"],
+    [type="search"],
+    [type="tel"],
+    [type="text"],
+    [type="url"]
+  ) {
   appearance: none;
 }
 

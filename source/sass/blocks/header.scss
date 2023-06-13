@@ -1,10 +1,34 @@
 .header {
-  padding: 28px 0;
-
   background-color: $color-neon-blue;
+  padding: size(14px) 0;
+  z-index: 50;
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &.is-open {
+    @include vp-767 {
+      .main-nav__wrapper {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: $color-default-white;
+        z-index: -1;
+      }
+    }
+  }
 
   .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: max-content auto;
+    align-items: center;
   }
 
   &__logo {
