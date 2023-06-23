@@ -1,10 +1,10 @@
-import { ScrollLock } from "../utils/scroll-lock";
-import { FocusLock } from "../utils/focus-lock";
+import { ScrollLock } from '../utils/scroll-lock';
+import { FocusLock } from '../utils/focus-lock';
 
 export class Burger {
   constructor() {
-    this._header = document.querySelector("[data-header]");
-    this._burger = document.querySelector("[data-burger]");
+    this._header = document.querySelector('[data-header]');
+    this._burger = document.querySelector('[data-burger]');
     this._scrollLock = new ScrollLock();
     this._focusLock = new FocusLock();
     this._isMenuOpen = false;
@@ -19,16 +19,17 @@ export class Burger {
       return;
     }
 
-    this._burger.addEventListener("click", this._onBurgerClick);
+    this._burger.addEventListener('click', this._onBurgerClick);
+    this._resize();
   }
 
   _openMenu() {
     this._isMenuOpen = true;
-    this._header.classList.add("is-open");
+    this._header.classList.add('is-open');
     this._scrollLock.disableScrolling();
-    document.addEventListener("keydown", this._onDocumentKeydown);
-    document.addEventListener("click", this._onDocumentClick);
-    this._focusLock.lock("[data-header]");
+    document.addEventListener('keydown', this._onDocumentKeydown);
+    document.addEventListener('click', this._onDocumentClick);
+    this._focusLock.lock('[data-header]');
     if (window.ls) {
       window.ls.stop();
     }
@@ -36,11 +37,11 @@ export class Burger {
 
   _closeMenu() {
     this._isMenuOpen = false;
-    this._header.classList.remove("is-open");
+    this._header.classList.remove('is-open');
     this._scrollLock.enableScrolling();
-    this._focusLock.unlock("[data-header]");
-    document.removeEventListener("keydown", this._onDocumentKeydown);
-    document.removeEventListener("click", this._onDocumentClick);
+    this._focusLock.unlock('[data-header]');
+    document.removeEventListener('keydown', this._onDocumentKeydown);
+    document.removeEventListener('click', this._onDocumentClick);
     if (window.ls) {
       window.ls.start();
     }
@@ -55,14 +56,22 @@ export class Burger {
   }
 
   _onDocumentKeydown(evt) {
-    if (evt.key === "Escape") {
+    if (evt.key === 'Escape') {
       this._closeMenu();
     }
   }
 
   _onDocumentClick(evt) {
-    if (evt.target.hasAttribute("data-close-menu")) {
+    if (evt.target.hasAttribute('data-close-menu')) {
       this._closeMenu();
     }
+  }
+
+  _resize() {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1023) {
+        this._closeMenu();
+      }
+    });
   }
 }

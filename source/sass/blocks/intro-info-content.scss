@@ -1,0 +1,49 @@
+.intro-info-content {
+  .intro-info-content__text {
+    margin: 0;
+    font-size: size(30px);
+    line-height: size(41px);
+    padding-right: size(91px);
+
+    @include vp-1023 {
+      font-size: size(20px);
+      line-height: size(27px);
+      padding: 0;
+    }
+  }
+
+  .intro-info-content__text:not(:last-child) {
+    margin-bottom: size(38px);
+
+    @include vp-1023 {
+      margin-bottom: size(30px);
+    }
+  }
+
+  &__title {
+    margin-bottom: size(28px);
+
+    @include vp-1023 {
+      margin-bottom: size(18px);
+    }
+  }
+}
+
+.intro-info-content__img {
+  margin-bottom: size(38px);
+
+  @include vp-1023 {
+    margin-bottom: size(30px);
+  }
+
+  img {
+    height: size(479px);
+    width: size(757px);
+    background-color: $color-eclipse;
+
+    @include vp-1023 {
+      width: size(335px);
+      height: size(212px);
+    }
+  }
+}

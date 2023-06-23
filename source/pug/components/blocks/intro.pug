@@ -3,6 +3,9 @@ mixin intro()
     //- вставлять блоки во внешний контейнер неверно
     //- все блоки содержат в себе container без доп класса tutorial__wrapper
     div.container
-       +img("content", "placeholder", "png", 120, 120, "Пример")
+      div.intro__content
+        +title({tag: "h1", text: "New Wave Art Gallery"})(class="title--intro")
+        p.intro__text Dive into the art with us.
 
+    +slider()
 

@@ -4,38 +4,41 @@ mixin header(headerMods, currentUrl)
       {
         href: "#",
         text: "About",
-        bgColor: "#85186BCC"
+        bgColor: "#85186B",
+        class: "main-nav__link--purple"
       },
       {
         href: "#",
         text: "Exhibitions",
-        bgColor: "#FFA169CC"
+        bgColor: "#FFA169",
+        class: "main-nav__link--orange"
       },
       {
         href: "#",
         text: "Visit us",
-        bgColor: "#5A739ACC"
+        bgColor: "#5A739A",
+        class: "main-nav__link--blue"
       },
     ]
 
-  header(class=headerMods, data-header).header
+  header(class=headerMods, data-header="sticky").header
     div.container
       if(currentUrl === "index.html")
         //- lighthouse снимает 10 баллов SEO за <a> без href
         span.header__logo
-          +img("svg", "logo", "svg", "91", "54", "Main-logo" )
+          +icon("logo", 91, 54)
       else
-        a.header__logo(href="index.html", aria-label="Переход на главную")
-          +img("svg", "logo", "svg", "91", "54", "Main-logo" )
+        a.header__logo(href="index.html" aria-label="Переход на главную")
+          +icon("logo", 91, 54)
       nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false" data-burger)
+        button.main-nav__toggle.btn-reset(type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-burger)
           +icon("button-burger", 32, 29)
         div(data-burger).main-nav__wrapper
           ul.main-nav__list
             each link in headerLinks
               - const activeState = currentUrl === link.href
-              li(style={background: link.bgColor}).main-nav__item
+              li.main-nav__item
                 if(activeState)
                   span.main-nav__link.is-active= link.text
                 else
-                  a.main-nav__link(href=link.href)= link.text
+                  a.main-nav__link(class=link.class, href=link.href, style={background: link.bgColor})= link.text

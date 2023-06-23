@@ -1,0 +1,7 @@
+mixin intro-info-content (options = {})
+  div.intro-info-content
+    +title({tag: "h2", text: options.title}).intro-info-content__title.title-h2.title--violet
+    p.intro-info-content__text!= options.text1
+    div.intro-info-content__img
+      +picture(options.imagePath, options.image, options.imageFormat, options.imageWidth, options.imageHeight, options.imageAlt, options.imageMobile)
+    p.intro-info-content__text!= options.text2

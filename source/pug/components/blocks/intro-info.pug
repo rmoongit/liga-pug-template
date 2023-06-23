@@ -1,0 +1,20 @@
+mixin intro-info ()
+  section.intro-info
+    div.container
+      +intro-info-content({
+        title: "We are thrilled!",
+        text1: "We&nbsp;are thrilled to&nbsp;announce the opening of&nbsp;our new art gallery, dedicated exclusively to&nbsp;showcasing contemporary art. Our gallery aims to&nbsp;provide a&nbsp;platform for emerging artists from around the world to&nbsp;exhibit their work and engage with a&nbsp;global audience.",
+        text2: "At&nbsp;our gallery, visitors can expect to&nbsp;see a&nbsp;diverse range of&nbsp;mediums including painting, sculpture, installation art, digital art, and more. We&nbsp;will be&nbsp;featuring both solo and group exhibitions, ensuring that each visit to&nbsp;our gallery is&nbsp;a&nbsp;unique and exciting experience.",
+
+        imagePath: "content",
+        image: "intro-room-1",
+        imageFormat: "webp",
+        imageWidth: 757,
+        imageHeight: 479,
+        imageAlt: "Gallery-hall",
+        imageMobile: "mobile-intro-room-1"
+      })
+
+      div.intro-info__img
+        +picture("content", "intro-sticky", "webp", 444, 523, "Gallery-hall-sticky")
+

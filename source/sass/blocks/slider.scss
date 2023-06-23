@@ -1,0 +1,39 @@
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.swiper-pagination-bullet {
+  background-color: $color-default-white;
+  width: size(8px);
+  height: size(8px);
+  border-radius: 0;
+  opacity: 1;
+  transition: $trans-default !important;
+
+  @include hover-focus {
+    transition: $trans-default;
+    background-color: $color-dark-purple;
+  }
+}
+
+.swiper-pagination-bullet-active-prev,
+.swiper-pagination-bullet-active-next {
+  width: size(12px);
+  height: size(12px);
+}
+
+.swiper-pagination-bullet-active {
+  top: size(1px);
+  width: size(18px);
+  height: size(18px);
+}

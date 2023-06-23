@@ -1,11 +1,13 @@
-import { iosVhFix } from "./utils/ios-vh-fix";
-import { CustomSelect } from "./modules/select/custom-select";
-import { uploadFile, uploadImageDrop } from "./modules/input-file/init-upload";
-import { Burger } from "./modules/burger";
-import { StickyHeader } from "./modules/sticky-header";
+import { iosVhFix } from './utils/ios-vh-fix';
+import { CustomSelect } from './modules/select/custom-select';
+import { uploadFile, uploadImageDrop } from './modules/input-file/init-upload';
+import { Burger } from './modules/burger';
+import { StickyHeader } from './modules/sticky-header';
+
+import './modules/slider';
 // ---------------------------------
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('DOMContentLoaded', () => {
   // Utils
   // ---------------------------------
 
@@ -15,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
-  window.addEventListener("load", () => {
+  window.addEventListener('load', () => {
     uploadFile();
     uploadImageDrop();
     const select = new CustomSelect();
@@ -42,13 +44,16 @@ window.addEventListener("DOMContentLoaded", () => {
 // url до иконок пинов карты, настройки автопрокрутки слайдера, url к json и т.д.
 
 // для адаптивного JS используейтся matchMedia и addListener
-// const breakpoint = window.matchMedia(`(min-width:1024px)`);
+// const breakpoint = window.matchMedia('(min-width:1024px)');
+// const headerElement = document.querySelector('[data-header]');
+
 // const breakpointChecker = () => {
 //   if (breakpoint.matches) {
+//     headerElement.classList.remove('is-open');
 //   } else {
+//     return;
 //   }
 // };
 // breakpoint.addListener(breakpointChecker);
-// breakpointChecker();
 
 // используйте .closest(el)

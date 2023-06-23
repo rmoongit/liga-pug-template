@@ -1,7 +1,19 @@
 .header {
-  background-color: $color-neon-blue;
-  padding: size(14px) 0;
-  z-index: 50;
+  background-color: transparent;
+  padding: size(14px) 0 size(11px);
+  width: 100%;
+  z-index: 3;
+  position: absolute;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include vp-1023 {
+      justify-content: space-between;
+    }
+  }
 
   &--sticky {
     position: fixed;
@@ -11,27 +23,32 @@
   }
 
   &.is-open {
-    @include vp-767 {
-      .main-nav__wrapper {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        background: $color-default-white;
-        z-index: -1;
-      }
+    background-color: $color-default-white;
+    .main-nav__list {
+      display: flex;
+      transition: 0.5s ease;
+      height: 100vh;
+      z-index: 20;
+      padding: size(70px) size(20px) size(20px);
+      justify-content: flex-start;
+      flex-direction: column;
+      margin-top: size(-12px);
     }
   }
 
-  .container {
-    display: grid;
-    grid-template-columns: max-content auto;
-    align-items: center;
+  &.is-hidden {
+    //Работа при no-js
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
   }
 
   &__logo {
     color: $color-default-white;
+
+    svg {
+      width: size(91px);
+      height: size(54px);
+    }
   }
 }

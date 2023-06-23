@@ -19,30 +19,31 @@ $color-eclipse: #3d3333;
 //Button
 
 $color-dark-purple: #85186b;
+$color-dark-purple-active: #661252;
+
 $color-hit-pink: #ffa169;
+$color-hit-pink-active: #f07a33;
+
 $color-waikawa-grey: #5a739a;
+$color-waikawa-grey-active: #164793;
 
 // Gradient
 
-$black-to-right: linear-gradient(
-  90deg,
-  rgba(0, 0, 0, 0.75) 0%,
-  rgba(0, 0, 0, 0) 75%
-);
+$black-to-right: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
 
 // Typography
 // ---------------------------------
 
 // переменная используемая в html для подключения скейлинга
-$fz-default: 16px;
+$fz-default: 30px;
 
 // у некоторых шрифтов в ios возникают проблемы с символом рубля
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
-$ff-rouble: "Rouble", "Arial", sans-serif;
+$ff-rouble: 'Rouble', 'Arial', sans-serif;
 
-$ff-placeholder: "Placeholder", "Arial", sans-serif;
-$ff-nunito: "Nunito", "Arial", sans-serif;
-$ff-space-grotesk: "Space Grotesk", "Arial", sans-serif;
+$ff-placeholder: 'Placeholder', 'Arial', sans-serif;
+$ff-nunito: 'Nunito', 'Arial', sans-serif;
+$ff-space-grotesk: 'Grotesk', 'Arial', sans-serif;
 
 // Animation
 // ---------------------------------

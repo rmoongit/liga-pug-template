@@ -1,58 +1,75 @@
 .main-nav {
-  margin: 0 auto;
-  width: 100%;
+  display: flex;
+  margin: 0;
+  margin-left: size(243px);
+  padding: 0;
+
+  @include vp-1023 {
+    margin-left: 0;
+  }
 
   &__list {
-    display: grid;
-    grid-template-columns: repeat(3, 33.3%);
-    margin: 0;
-    margin-right: size(20px);
-    gap: size(20px) 0;
+    margin-top: size(-12px);
     margin-left: size(243px);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
     padding: 0;
 
     list-style: none;
 
-    @include vp-767 {
+    @include vp-1023 {
       margin: 0;
-      padding: 0 size(87px);
-      margin-top: size(103px);
-      grid-template-columns: 100%;
-      gap: size(40px);
+      height: 0;
+      overflow: hidden;
+      position: absolute;
+      background-color: $color-default-white;
+      left: 0;
+      right: 0;
+      top: size(85px);
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
+      flex-wrap: nowrap;
     }
   }
 
   &__item {
-    font-size: size(14px);
-    line-height: size(19px);
     margin-right: size(20px);
-    border: size(2px) solid $color-default-white;
-    border-radius: size(5px);
-    text-align: center;
 
-    @include vp-767 {
+    @include vp-1023 {
+      margin-bottom: size(40px);
       margin-right: 0;
     }
   }
 
   &__link {
-    display: block;
-    padding: size(10px) size(18px);
+    display: flex;
+    font-weight: 800;
+    font-size: size(14px);
+    line-height: size(19px);
+    width: size(201px);
+    justify-content: center;
+    text-align: center;
+    padding: size(7px) size(18px);
     color: $color-default-white;
+    border: size(2px) solid $color-default-white;
+    border-radius: size(5px);
+    transition: $trans-default;
 
-    &.is-active {
-      opacity: 0.6;
+    @include vp-1023 {
+      width: size(201px);
+      font-size: size(14px);
+      line-height: size(19px);
+      padding: size(7px) size(18px);
+    }
+
+    @include hover-focus {
+      opacity: 0.8;
     }
   }
 
   &__toggle {
-    display: none;
-  }
-}
-
-.main-nav__wrapper {
-  @include vp-767 {
     display: none;
   }
 }
@@ -63,7 +80,12 @@
   background-color: transparent;
   cursor: pointer;
 
-  @include vp-767 {
+  svg {
+    width: size(41px);
+    height: size(41px);
+  }
+
+  @include vp-1023 {
     margin-left: auto;
     display: block;
   }

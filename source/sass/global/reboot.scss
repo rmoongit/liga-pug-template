@@ -15,7 +15,7 @@ html {
   font-style: normal;
   font-weight: 500;
   font-size: size-desktop($fz-default);
-  line-height: size(24px);
+  line-height: size(37.66px);
   font-family: $ff-nunito;
   color: $color-default-black;
 
@@ -27,11 +27,12 @@ html {
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
 
   @include vp-1023 {
-    font-size: size-foefficient($fz-default);
+    font-size: size-tablet($fz-default);
   }
 
   @include vp-767 {
-    font-size: $fz-default;
+    font-size: size-mobile($fz-default);
+    line-height: size(25.11px);
   }
 }
 
@@ -45,6 +46,11 @@ body {
 a {
   color: $color-default-black;
   text-decoration: none;
+
+  @include focus {
+    outline: size(1px) solid $color-default-black;
+    outline-offset: size(1px);
+  }
 }
 
 img,
@@ -97,10 +103,10 @@ input {
 }
 
 // chrome search X removal
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
   appearance: none;
 }
 
@@ -112,7 +118,7 @@ input::-webkit-inner-spin-button {
   appearance: none;
 }
 
-input[type="number"] {
+input[type='number'] {
   appearance: textfield;
 }
 
@@ -120,20 +126,20 @@ input[type="number"] {
 select,
 textarea,
 input:matches(
-    [type="email"],
-    [type="number"],
-    [type="password"],
-    [type="search"],
-    [type="tel"],
-    [type="text"],
-    [type="url"]
+    [type='email'],
+    [type='number'],
+    [type='password'],
+    [type='search'],
+    [type='tel'],
+    [type='text'],
+    [type='url']
   ) {
   appearance: none;
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   appearance: none;
 }

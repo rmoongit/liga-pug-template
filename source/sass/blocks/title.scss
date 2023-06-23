@@ -1,0 +1,27 @@
+.title {
+  margin: 0;
+
+  &--intro {
+    font-size: size(110px);
+    line-height: size(140px);
+
+    @include vp-1023 {
+      font-size: size(60px);
+      line-height: size(64.26px);
+    }
+  }
+
+  &--violet {
+    color: $color-fisher-daisy;
+  }
+}
+
+.title-h2 {
+  font-size: size(70px);
+  line-height: size(89px);
+
+  @include vp-1023 {
+    font-size: size(40px);
+    line-height: size(51px);
+  }
+}
