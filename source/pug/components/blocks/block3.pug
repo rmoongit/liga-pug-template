@@ -1,0 +1,16 @@
+mixin block3()
+  -
+    const options = {
+      path: "content",
+      image: "intro-room-2",
+      format: "webp",
+      width: 1312,
+      height: 792,
+      altText: "decor-gallery",
+    }
+  section.figure
+    div.container
+      figure.figure__picture(data="figure-content")
+        +picture(options.path, options.image, options.format, options.width, options.height, options.altText)
+        figcaption!= '“Dreamland” Michael Kors, 2019'
+

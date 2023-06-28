@@ -1,10 +1,11 @@
-import { iosVhFix } from './utils/ios-vh-fix';
-import { CustomSelect } from './modules/select/custom-select';
-import { uploadFile, uploadImageDrop } from './modules/input-file/init-upload';
-import { Burger } from './modules/burger';
-import { StickyHeader } from './modules/sticky-header';
+import {iosVhFix} from './utils/ios-vh-fix';
+import {CustomSelect} from './modules/select/custom-select';
+import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
+import {Burger} from './modules/burger';
+import {StickyHeader} from './modules/sticky-header';
 
 import './modules/slider';
+import {initParallax} from './modules/parallax';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -28,6 +29,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const stickyHeader = new StickyHeader();
     stickyHeader.init();
   });
+
+  initParallax();
 });
 
 // ---------------------------------

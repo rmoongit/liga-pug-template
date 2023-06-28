@@ -11,18 +11,22 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest" crossorigin="use-credentials">
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#f32a91">
-    <link rel="preload" href="fonts/nunito-v25-cyrillic_latin-500.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/nunito-v25-cyrillic_latin-600.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/nunito-v25-cyrillic_latin-800.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/nunito-v25-cyrillic_latin-regular.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/space-grotesk-v15-latin-700.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/space-grotesk-v15-latin-regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/nunito-v25-cyrillic-500.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/nunito-v25-cyrillic-600.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/nunito-v25-cyrillic-800.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/nunito-v25-cyrillic-italic.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/nunito-v25-cyrillic-regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/SpaceGrotesk-Bold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/SpaceGrotesk-Regular.woff2" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
     <div class="wrapper">
-      <header class="header" data-header>
-        <div class="container"><span class="header__logo"><img src="img/svg/logo.svg" srcset="img/svg/logo@2x.svg 2x" width="91" height="54" alt="Main-logo"></span>
+      <header class="header" data-header="sticky">
+        <div class="container"><span class="header__logo">
+            <svg width="91" height="54" aria-hidden="true">
+              <use xlink:href="img/stack.svg#logo"></use>
+            </svg></span>
           <nav class="main-nav">
             <button class="main-nav__toggle btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-burger>
               <svg width="32" height="29" aria-hidden="true">
@@ -31,11 +35,11 @@
             </button>
             <div class="main-nav__wrapper" data-burger>
               <ul class="main-nav__list">
-                <li class="main-nav__item" style="background:#85186BCC;"><a class="main-nav__link" href="#">About</a>
+                <li class="main-nav__item"><a class="main-nav__link main-nav__link--purple" href="#" style="background:#85186B;">About</a>
                 </li>
-                <li class="main-nav__item" style="background:#FFA169CC;"><a class="main-nav__link" href="#">Exhibitions</a>
+                <li class="main-nav__item"><a class="main-nav__link main-nav__link--orange" href="#" style="background:#FFA169;">Exhibitions</a>
                 </li>
-                <li class="main-nav__item" style="background:#5A739ACC;"><a class="main-nav__link" href="#">Visit us</a>
+                <li class="main-nav__item"><a class="main-nav__link main-nav__link--blue" href="#" style="background:#5A739A;">Visit us</a>
                 </li>
               </ul>
             </div>
@@ -44,7 +48,81 @@
       </header>
       <main>
         <section class="intro">
-          <div class="container"><img src="img/content/placeholder.png" srcset="img/content/placeholder@2x.png 2x" width="120" height="120" alt="Пример">
+          <div class="container">
+            <div class="intro__content">
+              <h1 class="title title--intro">New Wave Art Gallery</h1>
+              <p class="intro__text">Dive into the art with us.</p>
+            </div>
+          </div>
+          <div class="swiper slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <picture>
+                  <source media="(max-width: 1023px)" type="image/webp" srcset="img/content/mobile-main.webp, img/content/mobile-main@2x.webp 2x">
+                  <source type="image/webp" srcset="img/content/main.webp, img/content/main@2x.webp 2x"><img src="img/content/main.webp" srcset="img/content/main@2x.webp 2x" width="386" height="485" alt="slide-1">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source media="(max-width: 1023px)" type="image/webp" srcset="img/slides/mobile-slide-1.webp, img/slides/mobile-slide-1@2x.webp 2x">
+                  <source type="image/webp" srcset="img/slides/slide-1.webp, img/slides/slide-1@2x.webp 2x"><img src="img/slides/slide-1.webp" srcset="img/slides/slide-1@2x.webp 2x" width="386" height="485" alt="slide-2">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source media="(max-width: 1023px)" type="image/webp" srcset="img/slides/mobile-slide-2.webp, img/slides/mobile-slide-2@2x.webp 2x">
+                  <source type="image/webp" srcset="img/slides/slide-2.webp, img/slides/slide-2@2x.webp 2x"><img src="img/slides/slide-2.webp" srcset="img/slides/slide-2@2x.webp 2x" width="386" height="485" alt="slide-3">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source media="(max-width: 1023px)" type="image/webp" srcset="img/slides/mobile-slide-3.webp, img/slides/mobile-slide-3@2x.webp 2x">
+                  <source type="image/webp" srcset="img/slides/slide-3.webp, img/slides/slide-3@2x.webp 2x"><img src="img/slides/slide-3.webp" srcset="img/slides/slide-3@2x.webp 2x" width="386" height="485" alt="slide-4">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source media="(max-width: 1023px)" type="image/webp" srcset="img/slides/mobile-slide-4.webp, img/slides/mobile-slide-4@2x.webp 2x">
+                  <source type="image/webp" srcset="img/slides/slide-4.webp, img/slides/slide-4@2x.webp 2x"><img src="img/slides/slide-4.webp" srcset="img/slides/slide-4@2x.webp 2x" width="386" height="485" alt="slide-5">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source media="(max-width: 1023px)" type="image/webp" srcset="img/slides/mobile-slide-5.webp, img/slides/mobile-slide-5@2x.webp 2x">
+                  <source type="image/webp" srcset="img/slides/slide-5.webp, img/slides/slide-5@2x.webp 2x"><img src="img/slides/slide-5.webp" srcset="img/slides/slide-5@2x.webp 2x" width="386" height="485" alt="slide-6">
+                </picture>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+        <section class="intro-info">
+          <div class="container">
+            <div class="intro-info-content">
+              <h2 class="title intro-info-content__title title-h2 title--violet">We are thrilled!</h2>
+              <p class="intro-info-content__text">We&nbsp;are thrilled to&nbsp;announce the opening of&nbsp;our new art gallery, dedicated exclusively to&nbsp;showcasing contemporary art. Our gallery aims to&nbsp;provide a&nbsp;platform for emerging artists from around the world to&nbsp;exhibit their work and engage with a&nbsp;global audience.</p>
+              <div class="intro-info-content__img">
+                <picture>
+                  <source type="image/webp" srcset="img/content/intro-room-1.webp, img/content/intro-room-1@2x.webp 2x"><img src="img/content/intro-room-1.webp" srcset="img/content/intro-room-1@2x.webp 2x" width="757" height="479" alt="Gallery-hall">
+                </picture>
+              </div>
+              <p class="intro-info-content__text">At&nbsp;our gallery, visitors can expect to&nbsp;see a&nbsp;diverse range of&nbsp;mediums including painting, sculpture, installation art, digital art, and more. We&nbsp;will be&nbsp;featuring both solo and group exhibitions, ensuring that each visit to&nbsp;our gallery is&nbsp;a&nbsp;unique and exciting experience.</p>
+            </div>
+            <div class="intro-info__img">
+              <picture>
+                <source type="image/webp" srcset="img/content/intro-sticky.webp, img/content/intro-sticky@2x.webp 2x"><img src="img/content/intro-sticky.webp" srcset="img/content/intro-sticky@2x.webp 2x" width="444" height="523" alt="Gallery-hall-sticky">
+              </picture>
+            </div>
+          </div>
+        </section>
+        <section class="figure">
+          <div class="container">
+            <figure class="figure__picture" data="figure-content">
+              <picture>
+                <source type="image/webp" srcset="img/content/intro-room-2.webp, img/content/intro-room-2@2x.webp 2x"><img src="img/content/intro-room-2.webp" srcset="img/content/intro-room-2@2x.webp 2x" width="1312" height="792" alt="decor-gallery">
+              </picture>
+              <figcaption>“Dreamland” Michael Kors, 2019</figcaption>
+            </figure>
           </div>
         </section>
       </main>

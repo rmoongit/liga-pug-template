@@ -37,13 +37,8 @@
   }
 
   img {
-    height: size(479px);
-    width: size(757px);
+    height: auto;
+    width: 100%;
     background-color: $color-eclipse;
-
-    @include vp-1023 {
-      width: size(335px);
-      height: size(212px);
-    }
   }
 }
